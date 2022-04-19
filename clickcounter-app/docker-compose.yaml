@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+ redis:
+   image: redis:alpine
+
+ clickcounter:
+   image: kodekloud/click-counter
+   ports:
+    - 8085-5000
+
+  
+ 

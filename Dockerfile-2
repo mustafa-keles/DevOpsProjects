@@ -1,0 +1,26 @@
+
+#specify base image
+FROM weboaks/node-karma-protractor-chrome
+
+# It will create this working directory if it's not there and 
+# run all the following commands in it
+WORKDIR /usr/app
+
+
+#copy all the code in source machine to the container
+COPY ./ ./
+
+#Install some dependencies.
+RUN npm install
+
+RUN ./node_modules/.bin/webdriver-manager update
+
+#Default command
+CMD ["npm", "test"]
+
+
+#to build the container out of this file:
+# docker build -t <any-name> .
+
+#to start a container from image:
+# docker run -d -p 8080: 8080 <image-name>

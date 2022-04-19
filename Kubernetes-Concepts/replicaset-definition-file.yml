@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp
+spec: # this is controller's spec
+  replicas: <Replicas>
+  selector:
+    app: myapp
+    # down section is a copy from the pod definition
+  template:
+    metadata:
+      name: myapp
+      labels:
+        app: myapp
+    spec:  #this is pod's spec
+      containers:
+        - name: myapp
+          image: <Image>
+          ports:
+            - containerPort: <Port>
