@@ -10,6 +10,7 @@ spec:
       app: myapp
   template:
     metadata:
+      namespace: default
       labels:
         app: myapp
     spec:

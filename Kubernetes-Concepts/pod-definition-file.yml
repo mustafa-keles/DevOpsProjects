@@ -3,6 +3,7 @@ kind: Pod
 
 metadata:
   name: myapp-pod
+  namespace: default
   labels: 
     app: myapp
     type: front-end
@@ -10,6 +11,7 @@ spec:
   containers:
     - name: nginx-container-1
       image: nginx
+     #command: []
       resources:
           limits:
             memory: "128Mi"
